@@ -37,6 +37,19 @@ public class Player : MonoBehaviour
     float tempTime = 0;
     float tempTimeMover = 0;
 
+    int moveDirection = -1;
+    /*
+        -1 = None
+        0 = Up
+        1 = Up Right
+        2 = Right
+        3 = Down Right
+        4 = Down
+        5 = Down Left
+        6 = Left
+        7 = Up Left
+    */
+
     // Use this for initialization
     void Start()
     {
@@ -153,6 +166,7 @@ public class Player : MonoBehaviour
             movementPressed = !(movementPressed);
             TimerSet = false;
         }
+        
 
         Debug.Log(x);
         //Debug.Log(y);
@@ -166,18 +180,22 @@ public class Player : MonoBehaviour
             if (x > .2f)
             {
                 transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                moveDirection = 2;
             }
             if (x < -.2f)
             {
                 transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                moveDirection = 6;
             }
             if (y > .2f)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                moveDirection = 0;
             }
             if (y < -.2f)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                moveDirection = 4;
             }
 
             tempTime = Time.time;
@@ -199,7 +217,6 @@ public class Player : MonoBehaviour
         //#endif
 
 
-
     }
 
 
@@ -215,6 +232,15 @@ public class Player : MonoBehaviour
             oxygen -= 1;
             tempInvulnTimer = damageAmountFromTerrain;
         }
+if (coll.CompareTag("Wall"))
+        {
+            if (moveDirection == 2) transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+
+
+            if (moveDirection == 6) transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+            if (moveDirection == 0) transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+            if (moveDirection == 4) transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+}
     }
 
     float GetOxygen()
