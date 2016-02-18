@@ -166,7 +166,7 @@ public class Player : MonoBehaviour
             movementPressed = !(movementPressed);
             TimerSet = false;
         }
-        
+
 
         Debug.Log(x);
         //Debug.Log(y);
@@ -232,15 +232,13 @@ public class Player : MonoBehaviour
             oxygen -= 1;
             tempInvulnTimer = damageAmountFromTerrain;
         }
-if (coll.CompareTag("Wall"))
+        if (coll.gameObject.tag == "Wall")
         {
             if (moveDirection == 2) transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-
-
             if (moveDirection == 6) transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
             if (moveDirection == 0) transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
             if (moveDirection == 4) transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-}
+        }
     }
 
     float GetOxygen()
