@@ -2,8 +2,9 @@
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
-    public GameObject enemy, point1, point2;
-    public float movementSpeed, step, startSpeed;
+    public GameObject enemy,point1, point2;
+
+    public float movementSpeed = 5, step, startSpeed;
 
     public bool isTouching = false;
 
@@ -13,13 +14,20 @@ public class Enemy : MonoBehaviour {
 
     private Vector3 location;
 
+    public int rightPoint = 5, leftPoint = 5;
+    
     // Use this for initialization
-    void Start () {
-        enemy.transform.position = (point1.transform.position + point2.transform.position) * 0.5f;
+    void Start ()
+    {
         startSpeed = movementSpeed;
         enemy.tag = "Enemy";
-
         step = movementSpeed * Time.deltaTime;
+        
+        Vector3 temp = new Vector3(enemy.transform.position.x + rightPoint, enemy.transform.position.y, enemy.transform.position.z);
+        point1.transform.position = temp;
+        
+        temp = new Vector3(enemy.transform.position.x - leftPoint, enemy.transform.position.y, enemy.transform.position.z);
+        point2.transform.position = temp;
 
         if (movementSpeed < 0)
         {
@@ -30,9 +38,9 @@ public class Enemy : MonoBehaviour {
 
 
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
 
         step = movementSpeed * Time.deltaTime;
@@ -45,7 +53,7 @@ public class Enemy : MonoBehaviour {
             {
                 enemy.transform.position = Vector3.MoveTowards(transform.position, point1.transform.position, step);
                 enemy.transform.rotation = Quaternion.Euler(0, 0, 0);
-                enemy.GetComponent<SpriteRenderer>().flipX = false;
+                enemy.GetComponent<SpriteRenderer>().flipX = true;
                 if (point1.transform.position == enemy.transform.position)
                 {
                     goToPoint1 = false;
@@ -55,7 +63,7 @@ public class Enemy : MonoBehaviour {
             {
                 enemy.transform.position = Vector3.MoveTowards(transform.position, point2.transform.position, step);
                 enemy.transform.rotation = Quaternion.Euler(0, 0, 0);
-                enemy.GetComponent<SpriteRenderer>().flipX = true;
+                enemy.GetComponent<SpriteRenderer>().flipX = false;
                 if (point2.transform.position == enemy.transform.position)
                 {
                     goToPoint1 = true;
