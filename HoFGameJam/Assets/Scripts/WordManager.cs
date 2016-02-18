@@ -26,11 +26,17 @@ public class WordManager : MonoBehaviour {
             for (int i = 0; i < 3; ++i)
             {
                 int number = Random.Range(0, letter_spawners.Length);
+                int num_checks = 0;
                 while (number == used_numbers[0] || number == used_numbers[1] || number == used_numbers[2])
                 {
+                    num_checks++;
                     number++;
                     if (number >= letter_spawners.Length)
+                    {
                         number = 0;
+                    }
+                    if (num_checks > letter_spawners.Length)
+                        break;
                 }
                 used_numbers[i] = number;
                 char letter = three_letter_word[i];
@@ -39,12 +45,17 @@ public class WordManager : MonoBehaviour {
             for (int i = 0; i < 4; ++i)
             {
                 int number = Random.Range(0, letter_spawners.Length);
+                int num_checks = 0;
                 while (number == used_numbers[0] || number == used_numbers[1] || number == used_numbers[2] ||
                     number == used_numbers[3] || number == used_numbers[4] || number == used_numbers[5] || number == used_numbers[6])
                 {
+                    num_checks++;
                     number++;
                     if (number >= letter_spawners.Length)
                         number = 0;
+
+                    if (num_checks > letter_spawners.Length)
+                        break;
                 }
                 used_numbers[i + 3] = number;
                 char letter = four_letter_word[i];
@@ -55,12 +66,7 @@ public class WordManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    for (int i = 0; i < 7; ++i)
-        {
-            if (i < 3)
-                letter_spawners[used_numbers[i]].GetComponent<LetterSpawn>().InstantiateLetter(three_letter_word[i]);
-            else
-                letter_spawners[used_numbers[i]].GetComponent<LetterSpawn>().InstantiateLetter(four_letter_word[i - 3]);
-        }
+        
 	}
+
 }

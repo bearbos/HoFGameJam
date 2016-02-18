@@ -32,6 +32,19 @@ public class Player : MonoBehaviour
     bool movementPressed = false;
     bool TimerSet = false;
 
+    int moveDirection = -1;
+    /*
+        -1 = None
+        0 = Up
+        1 = Up Right
+        2 = Right
+        3 = Down Right
+        4 = Down
+        5 = Down Left
+        6 = Left
+        7 = Up Left
+    */
+
     // Use this for initialization
     void Start()
     {
@@ -96,18 +109,22 @@ public class Player : MonoBehaviour
             if (movex > 0)
             {
                 transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                moveDirection = 2;
             }
             if (movex < 0)
             {
                 transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                moveDirection = 6;
             }
             if (movey > 0)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                moveDirection = 0;
             }
             if (movey < 0)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                moveDirection = 4;
             }
             if (TimerSet)
             {
@@ -119,9 +136,17 @@ public class Player : MonoBehaviour
                 TimerSet = true;
             }
         }
-       
-       
 
+    }
 
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.CompareTag("Wall"))
+        {
+            if (moveDirection == 2) transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+            if (moveDirection == 6) transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+            if (moveDirection == 0) transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+            if (moveDirection == 4) transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+        }
     }
 }
