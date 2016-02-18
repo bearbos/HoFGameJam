@@ -290,16 +290,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Enemy" && tempInvulnTimer <= 0)
-        {
-            oxygen -= 1;
-            tempInvulnTimer = damageAmountFromShark;
-        }
-        if (coll.gameObject.tag == "Terrain" && tempInvulnTimer <= 0)
-        {
-            oxygen -= 1;
-            tempInvulnTimer = damageAmountFromTerrain;
-        }
+       
         if (coll.gameObject.tag == "Wall")
         {
             if (moveDirection == 2) transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
@@ -318,5 +309,11 @@ public class Player : MonoBehaviour
         return totalOxygen;
     }
 
+    public void TakeDamage()
+    {
+      oxygen -= 1;
+            tempInvulnTimer = damageAmountFromShark;
+       
+    }
 
 }

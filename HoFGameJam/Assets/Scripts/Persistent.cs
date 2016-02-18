@@ -32,7 +32,7 @@ public class Persistent : MonoBehaviour
         TOUCH,
         TILT
     }
-    Control controlSetting = Control.TOUCH;
+    Control controlSetting = Control.TILT;
     [SerializeField]
     int score = 0;
 
