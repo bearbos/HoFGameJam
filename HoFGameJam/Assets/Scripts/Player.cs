@@ -5,9 +5,9 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField]
-    GameObject MainCamera;
-    [SerializeField]
+    GameObject MainCamera = null;
     int difficultySetting = 0;
+    int MOVEMENTOPTION;
     [SerializeField]
     float oxygen = 10f;
     [SerializeField]
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     bool TimerSet = false;
     float tempInvulnTimer = 0f;
     float tempTime = 0;
-    float tempTimeMover = 0;
+    float tempTimeMover;
 
     int moveDirection = -1;
     /*
@@ -54,7 +54,13 @@ public class Player : MonoBehaviour
     void Start()
     {
         MainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-    
+        difficultySetting = MainCamera.GetComponent<Persistent>().GetDifficulty();
+        Debug.Log(difficultySetting);
+        Debug.Log("difficulty");
+        MOVEMENTOPTION = MainCamera.GetComponent<Persistent>().GetControls();
+        Debug.Log(MOVEMENTOPTION);
+        Debug.Log("Movement Type");
+
     }
 
     // Update is called once per frame
@@ -108,6 +114,7 @@ public class Player : MonoBehaviour
         }
 
 
+        #region Editor
         //#if UNITY_EDITOR
         //        if (Input.anyKey != movementPressed)
         //        {
@@ -148,71 +155,131 @@ public class Player : MonoBehaviour
         //        }
 
 
-        //#endif
+        //#endif 
+        #endregion
 
-        //#if MOVEMENTOPTION
-        //        // TOUCH
+        if (MOVEMENTOPTION == 0)
+        {       // TOUCH
 
 
-        //#else
-        // ACCELEROMETER
+            if (Input.touchCount > 0)
+            {
+                Debug.Log(Input.GetTouch(0).position);
+                Debug.Log("TOUCH");
+                Debug.Log(transform.position);
+                Debug.Log("PLAYER");
 
-        float x = Input.acceleration.x;
-        float y = Input.acceleration.y;
-        float z = Input.acceleration.z;
+                Vector3 temp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+                Debug.Log(temp);
+                Debug.Log("TOUCH");
+                Debug.Log(transform.position);
+                Debug.Log("PLAYER");
+                float x = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).x;
+                float y = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).y;
+                x = x - transform.position.x;
+                y = y - transform.position.y;
 
-        if (Input.anyKey != movementPressed)
-        {
-            movementPressed = !(movementPressed);
-            TimerSet = false;
+                if (movementTimer <= 0 && tempTimeMover <= Time.time)
+                {
+
+                    if (x > 1f && Mathf.Abs(x) > Mathf.Abs(y))
+                    {
+                        transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                        moveDirection = 2;
+                    }
+                    if (x < -1f && Mathf.Abs(x) > Mathf.Abs(y))
+                    {
+                        transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                        moveDirection = 6;
+                    }
+                    if (y > 1f && Mathf.Abs(y) > Mathf.Abs(x))
+                    {
+                        transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                        moveDirection = 0;
+                    }
+                    if (y < -1f && Mathf.Abs(y) > Mathf.Abs(x))
+                    {
+                        transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                        moveDirection = 4;
+                    }
+
+                    tempTimeMover = Time.time + 1f;
+
+                    if (TimerSet)
+                    {
+                        tempTimeMover = tempTime + .25f;
+                        movementTimer = .25f;
+                    }
+
+                    //else
+                    //{
+                    //    tempTimeMover = tempTime + 2f;
+                    //    movementTimer = .75f;
+                    //    TimerSet = true;
+                    //}
+
+                }
+
+
+            }
         }
-
-
-        Debug.Log(x);
-        //Debug.Log(y);
-        //Debug.Log(z);
-
-
-
-        if (movementTimer <= 0 && tempTimeMover <= Time.time)
+        //#else
+        if (MOVEMENTOPTION == 1)
         {
 
-            if (x > .2f)
-            {
-                transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-                moveDirection = 2;
-            }
-            if (x < -.2f)
-            {
-                transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-                moveDirection = 6;
-            }
-            if (y > .2f)
-            {
-                transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                moveDirection = 0;
-            }
-            if (y < -.2f)
-            {
-                transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-                moveDirection = 4;
-            }
+            //ACCELEROMETER
 
-            tempTimeMover = Time.time + 1f;
+            float x = Input.acceleration.x;
+            float y = Input.acceleration.y;
+            float z = Input.acceleration.z;
 
-            if (TimerSet)
+
+            //Debug.Log(x);
+            //Debug.Log(y);
+            //Debug.Log(z);
+
+
+
+            if (movementTimer <= 0 && tempTimeMover <= Time.time)
             {
-                tempTimeMover = tempTime + .25f;
-                movementTimer = .25f;
+
+                if (x > .2f)
+                {
+                    transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                    moveDirection = 2;
+                }
+                if (x < -.2f)
+                {
+                    transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                    moveDirection = 6;
+                }
+                if (y > .2f)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                    moveDirection = 0;
+                }
+                if (y < -.2f)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                    moveDirection = 4;
+                }
+
+                tempTimeMover = Time.time + 1f;
+
+                if (TimerSet)
+                {
+                    tempTimeMover = tempTime + .25f;
+                    movementTimer = .25f;
+                }
+
+                //else
+                //{
+                //    tempTimeMover = tempTime + 2f;
+                //    movementTimer = .75f;
+                //    TimerSet = true;
+                //}
+
             }
-
-            //else
-            //{
-            //    tempTimeMover = tempTime + 2f;
-            //    movementTimer = .75f;
-            //    TimerSet = true;
-            //}
-
         }
 
         //#endif
