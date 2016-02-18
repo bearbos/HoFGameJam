@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 1, z: 0}
+  m_LocalPosition: {x: 3.7236834, y: 2.088737, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,7 +47,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6151602
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -76,11 +76,12 @@ MonoBehaviour:
   MainCamera: {fileID: 0}
   difficultySetting: 0
   oxygen: 10
+  totalOxygen: 10
   adjusted: 1
   movementDistance: 1
   damageAmountFromShark: 0
   damageAmountFromOctopus: 0
-  damageAmountFromTerain: 0
+  damageAmountFromTerrain: 0
   fillPerSuccess: 1
   continuousO2Drain: 0
   movementTimer: 0

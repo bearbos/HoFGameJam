@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour {
 
         if (!isTouching)
         {
-
+            GetComponent<Animator>().SetBool("Warning", false);
 
             if (goToPoint1)
             {
@@ -73,6 +73,7 @@ public class Enemy : MonoBehaviour {
         }
         if (isTouching)
         {
+            GetComponent<Animator>().SetBool("Warning", true);
             timeRemaining -= Time.deltaTime;
             if (timeRemaining < 0 && timeRemaining > -3)
             {
