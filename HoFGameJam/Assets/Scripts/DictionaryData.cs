@@ -5,7 +5,7 @@ using System.IO;
 
 public class DictionaryData : MonoBehaviour
 {
-    string filename;
+    string filename = "Assets\\GJ_Dictionary.txt";
 
     public string[] three_letter_words;
     public string[] four_letter_words;

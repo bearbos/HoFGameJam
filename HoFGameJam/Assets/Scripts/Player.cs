@@ -108,47 +108,47 @@ public class Player : MonoBehaviour
         }
 
 
-        #if UNITY_EDITOR
-                if (Input.anyKey != movementPressed)
-                {
-                    movementPressed = !(movementPressed);
-                    TimerSet = false;
-                }
+        //#if UNITY_EDITOR
+        //        if (Input.anyKey != movementPressed)
+        //        {
+        //            movementPressed = !(movementPressed);
+        //            TimerSet = false;
+        //        }
 
 
-                if (movementTimer <= 0 && movementPressed)
-                {
-                    movex = Input.GetAxis("Horizontal");
-                    movey = Input.GetAxis("Vertical");
-                    if (movex > 0)
-                    {
-                        transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-                    }
-                    if (movex < 0)
-                    {
-                        transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-                    }
-                    if (movey > 0)
-                    {
-                        transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                    }
-                    if (movey < 0)
-                    {
-                        transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-                    }
-                    if (TimerSet)
-                    {
-                        movementTimer = .25f;
-                    }
-                    else
-                    {
-                        movementTimer = .75f;
-                        TimerSet = true;
-                    }
-                }
+        //        if (movementTimer <= 0 && movementPressed)
+        //        {
+        //            movex = Input.GetAxis("Horizontal");
+        //            movey = Input.GetAxis("Vertical");
+        //            if (movex > 0)
+        //            {
+        //                transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+        //            }
+        //            if (movex < 0)
+        //            {
+        //                transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+        //            }
+        //            if (movey > 0)
+        //            {
+        //                transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        //            }
+        //            if (movey < 0)
+        //            {
+        //                transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+        //            }
+        //            if (TimerSet)
+        //            {
+        //                movementTimer = .25f;
+        //            }
+        //            else
+        //            {
+        //                movementTimer = .75f;
+        //                TimerSet = true;
+        //            }
+        //        }
 
 
-        #endif
+        //#endif
 
         //#if MOVEMENTOPTION
         //        // TOUCH
@@ -174,7 +174,7 @@ public class Player : MonoBehaviour
 
 
 
-        if (movementTimer <= 0 && x > .2f || x < -.2f || y > .2f || y < -.2f)
+        if (movementTimer <= 0 && tempTimeMover <= Time.time)
         {
 
             if (x > .2f)
@@ -198,19 +198,20 @@ public class Player : MonoBehaviour
                 moveDirection = 4;
             }
 
-            tempTime = Time.time;
+            tempTimeMover = Time.time + 1f;
 
             if (TimerSet)
             {
                 tempTimeMover = tempTime + .25f;
                 movementTimer = .25f;
             }
-            else
-            {
-                tempTimeMover = tempTime + 2f;
-                movementTimer = .75f;
-                TimerSet = true;
-            }
+
+            //else
+            //{
+            //    tempTimeMover = tempTime + 2f;
+            //    movementTimer = .75f;
+            //    TimerSet = true;
+            //}
 
         }
 
