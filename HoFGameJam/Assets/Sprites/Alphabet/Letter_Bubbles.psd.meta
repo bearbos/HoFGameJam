@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 512eec791438a6d4b8f28b39b6eff1c0
+timeCreated: 1455744886
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Letter_Bubbles_A
+    21300002: Letter_Bubbles_B
+    21300004: Letter_Bubbles_C
+    21300006: Letter_Bubbles_D
+    21300008: Letter_Bubbles_E
+    21300010: Letter_Bubbles_F
+    21300012: Letter_Bubbles_G
+    21300014: Letter_Bubbles_H
+    21300016: Letter_Bubbles_I
+    21300018: Letter_Bubbles_J
+    21300020: Letter_Bubbles_K
+    21300022: Letter_Bubbles_L
+    21300024: Letter_Bubbles_M
+    21300026: Letter_Bubbles_N
+    21300028: Letter_Bubbles_O
+    21300030: Letter_Bubbles_P
+    21300032: Letter_Bubbles_Q
+    21300034: Letter_Bubbles_R
+    21300036: Letter_Bubbles_S
+    21300038: Letter_Bubbles_T
+    21300040: Letter_Bubbles_U
+    21300042: Letter_Bubbles_V
+    21300044: Letter_Bubbles_W
+    21300046: Letter_Bubbles_X
+    21300048: Letter_Bubbles_Y
+    21300050: Letter_Bubbles_Z
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 180
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Letter_Bubbles_A
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1308
+        width: 169
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -64.799995, y: 67.400024}
+        - {x: -67.799995, y: 63.400024}
+        - {x: -67.799995, y: -33.599976}
+        - {x: -50.799995, y: -66.599976}
+        - {x: 38.200005, y: -66.599976}
+        - {x: 68.200005, y: -40.599976}
+        - {x: 68.200005, y: 67.400024}
+    - name: Letter_Bubbles_B
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1308
+        width: 168
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.100006, y: 67.400024}
+        - {x: -52.100006, y: 61.400024}
+        - {x: -60.100006, y: 40.400024}
+        - {x: -67.100006, y: 21.400024}
+        - {x: -67.100006, y: -35.599976}
+        - {x: -44.100006, y: -66.599976}
+        - {x: 29.899994, y: -66.599976}
+        - {x: 65.899994, y: -45.599976}
+        - {x: 67.899994, y: -43.599976}
+        - {x: 67.899994, y: 39.400024}
+        - {x: 51.899994, y: 67.400024}
+    - name: Letter_Bubbles_C
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1308
+        width: 168
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39.19998, y: 67.400024}
+        - {x: -67.19998, y: 36.400024}
+        - {x: -67.19998, y: -44.599976}
+        - {x: -34.19998, y: -66.599976}
+        - {x: 52.80002, y: -66.599976}
+        - {x: 68.80002, y: -32.599976}
+        - {x: 68.80002, y: 42.400024}
+        - {x: 44.80002, y: 67.400024}
+    - name: Letter_Bubbles_D
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 1308
+        width: 168
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52.299988, y: 67.400024}
+        - {x: -67.29999, y: 48.400024}
+        - {x: -67.29999, y: -50.599976}
+        - {x: -39.299988, y: -66.599976}
+        - {x: 56.700012, y: -66.599976}
+        - {x: 67.70001, y: -45.599976}
+        - {x: 67.70001, y: 60.400024}
+        - {x: 49.700012, y: 67.400024}
+    - name: Letter_Bubbles_E
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 1308
+        width: 169
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.399963, y: 67.400024}
+        - {x: -67.39996, y: 28.400024}
+        - {x: -67.39996, y: -43.599976}
+        - {x: -35.399963, y: -66.599976}
+        - {x: 37.600037, y: -66.599976}
+        - {x: 68.60004, y: -49.599976}
+        - {x: 68.60004, y: 47.400024}
+        - {x: 48.600037, y: 67.400024}
+    - name: Letter_Bubbles_F
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 1308
+        width: 169
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -64.79999, y: 67.400024}
+        - {x: -67.79999, y: 63.400024}
+        - {x: -67.79999, y: -33.599976}
+        - {x: -50.799988, y: -66.599976}
+        - {x: 38.200012, y: -66.599976}
+        - {x: 68.20001, y: -40.599976}
+        - {x: 68.20001, y: 67.400024}
+    - name: Letter_Bubbles_G
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1117
+        width: 169
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39.799995, y: 68.10004}
+        - {x: -67.799995, y: 33.100037}
+        - {x: -67.799995, y: -66.89996}
+        - {x: 67.200005, y: -66.89996}
+        - {x: 68.200005, y: -60.899963}
+        - {x: 68.200005, y: 52.100037}
+        - {x: 37.200005, y: 68.10004}
+    - name: Letter_Bubbles_H
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1117
+        width: 168
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -60.100006, y: 68.10004}
+        - {x: -67.100006, y: 50.100037}
+        - {x: -67.100006, y: -57.899963}
+        - {x: -36.100006, y: -66.89996}
+        - {x: 39.899994, y: -66.89996}
+        - {x: 67.899994, y: -38.899963}
+        - {x: 67.899994, y: 40.100037}
+        - {x: 42.899994, y: 68.10004}
+    - name: Letter_Bubbles_I
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1121
+        width: 168
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54.19998, y: 67.29999}
+        - {x: -67.19998, y: 42.299988}
+        - {x: -67.19998, y: -26.700012}
+        - {x: -49.19998, y: -65.70001}
+        - {x: 57.80002, y: -65.70001}
+        - {x: 68.80002, y: -46.700012}
+        - {x: 68.80002, y: 43.299988}
+        - {x: 59.80002, y: 67.29999}
+    - name: Letter_Bubbles_J
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 1117
+        width: 168
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54.299988, y: 67.60004}
+        - {x: -67.29999, y: 34.600037}
+        - {x: -67.29999, y: -40.399963}
+        - {x: -39.299988, y: -66.39996}
+        - {x: 44.700012, y: -66.39996}
+        - {x: 67.70001, y: -44.399963}
+        - {x: 67.70001, y: 40.600037}
+        - {x: 35.700012, y: 67.60004}
+    - name: Letter_Bubbles_K
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 1117
+        width: 169
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43.399963, y: 68.10004}
+        - {x: -67.39996, y: 51.100037}
+        - {x: -67.39996, y: -35.899963}
+        - {x: -53.399963, y: -66.89996}
+        - {x: 46.600037, y: -66.89996}
+        - {x: 68.60004, y: -56.899963}
+        - {x: 68.60004, y: 51.100037}
+        - {x: 62.600037, y: 68.10004}
+    - name: Letter_Bubbles_L
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 1117
+        width: 169
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39.799988, y: 68.10004}
+        - {x: -67.79999, y: 33.100037}
+        - {x: -67.79999, y: -66.89996}
+        - {x: 67.20001, y: -66.89996}
+        - {x: 68.20001, y: -60.899963}
+        - {x: 68.20001, y: 52.100037}
+        - {x: 37.200012, y: 68.10004}
+    - name: Letter_Bubbles_M
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 918
+        width: 169
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.799995, y: 68.400024}
+        - {x: -67.799995, y: 46.400024}
+        - {x: -67.799995, y: -37.599976}
+        - {x: -63.799995, y: -44.599976}
+        - {x: -48.799995, y: -67.599976}
+        - {x: 44.200005, y: -67.599976}
+        - {x: 68.200005, y: -52.599976}
+        - {x: 68.200005, y: 33.400024}
+        - {x: 43.200005, y: 68.400024}
+    - name: Letter_Bubbles_N
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 918
+        width: 168
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -51.100006, y: 68.400024}
+        - {x: -67.100006, y: 44.400024}
+        - {x: -67.100006, y: -27.599976}
+        - {x: -62.100006, y: -40.599976}
+        - {x: -38.100006, y: -67.599976}
+        - {x: 31.899994, y: -67.599976}
+        - {x: 67.899994, y: -52.599976}
+        - {x: 67.899994, y: 52.400024}
+        - {x: 38.899994, y: 68.400024}
+    - name: Letter_Bubbles_O
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 918
+        width: 168
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66.19998, y: 68.400024}
+        - {x: -67.19998, y: 65.400024}
+        - {x: -67.19998, y: -46.599976}
+        - {x: -42.19998, y: -67.599976}
+        - {x: 33.80002, y: -67.599976}
+        - {x: 68.80002, y: -54.599976}
+        - {x: 68.80002, y: 55.400024}
+        - {x: 65.80002, y: 68.400024}
+    - name: Letter_Bubbles_P
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 918
+        width: 168
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.299988, y: 68.400024}
+        - {x: -67.29999, y: 52.400024}
+        - {x: -67.29999, y: -41.599976}
+        - {x: -37.299988, y: -67.599976}
+        - {x: 29.700012, y: -67.599976}
+        - {x: 67.70001, y: -44.599976}
+        - {x: 67.70001, y: 50.400024}
+        - {x: 52.700012, y: 68.400024}
+    - name: Letter_Bubbles_Q
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 918
+        width: 169
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53.399963, y: 68.400024}
+        - {x: -67.39996, y: 65.400024}
+        - {x: -67.39996, y: -67.599976}
+        - {x: 61.600037, y: -67.599976}
+        - {x: 68.60004, y: -38.599976}
+        - {x: 68.60004, y: 43.400024}
+        - {x: 52.600037, y: 68.400024}
+    - name: Letter_Bubbles_R
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 918
+        width: 169
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67.79999, y: 68.400024}
+        - {x: -67.79999, y: -51.599976}
+        - {x: -62.799988, y: -67.599976}
+        - {x: 62.200012, y: -67.599976}
+        - {x: 68.20001, y: -50.599976}
+        - {x: 68.20001, y: 68.400024}
+    - name: Letter_Bubbles_S
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 727
+        width: 169
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -58.799995, y: 68.60004}
+        - {x: -67.799995, y: 49.600037}
+        - {x: -67.799995, y: -66.39996}
+        - {x: -62.799995, y: -67.39996}
+        - {x: 58.200005, y: -67.39996}
+        - {x: 68.200005, y: -40.399963}
+        - {x: 68.200005, y: 59.600037}
+        - {x: 45.200005, y: 68.60004}
+    - name: Letter_Bubbles_T
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 727
+        width: 168
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67.100006, y: 68.60004}
+        - {x: -67.100006, y: -36.399963}
+        - {x: -57.100006, y: -67.39996}
+        - {x: 40.899994, y: -67.39996}
+        - {x: 67.899994, y: -35.399963}
+        - {x: 67.899994, y: 67.60004}
+        - {x: 64.899994, y: 68.60004}
+    - name: Letter_Bubbles_U
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 727
+        width: 168
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.19998, y: 68.60004}
+        - {x: -67.19998, y: 36.600037}
+        - {x: -67.19998, y: -29.399963}
+        - {x: -50.19998, y: -62.399963}
+        - {x: -39.19998, y: -67.39996}
+        - {x: 36.80002, y: -67.39996}
+        - {x: 68.80002, y: -54.399963}
+        - {x: 68.80002, y: 61.600037}
+        - {x: 49.80002, y: 68.60004}
+    - name: Letter_Bubbles_V
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 727
+        width: 169
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39.399963, y: 68.60004}
+        - {x: -66.39996, y: 62.600037}
+        - {x: -67.39996, y: 51.600037}
+        - {x: -67.39996, y: -31.399963}
+        - {x: -43.399963, y: -67.39996}
+        - {x: 45.600037, y: -67.39996}
+        - {x: 68.60004, y: -40.399963}
+        - {x: 68.60004, y: 39.600037}
+        - {x: 46.600037, y: 68.60004}
+    - name: Letter_Bubbles_W
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 719
+        width: 168
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53.099976, y: 68.20001}
+        - {x: -67.099976, y: 32.200012}
+        - {x: -67.099976, y: -52.799988}
+        - {x: -58.099976, y: -67.79999}
+        - {x: 67.900024, y: -67.79999}
+        - {x: 67.900024, y: 43.200012}
+        - {x: 35.900024, y: 68.20001}
+    - name: Letter_Bubbles_X
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 719
+        width: 166
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46.200012, y: 68.20001}
+        - {x: -66.20001, y: 35.200012}
+        - {x: -66.20001, y: -39.799988}
+        - {x: -37.200012, y: -67.79999}
+        - {x: 34.799988, y: -67.79999}
+        - {x: 67.79999, y: -54.799988}
+        - {x: 67.79999, y: 50.200012}
+        - {x: 49.799988, y: 68.20001}
+    - name: Letter_Bubbles_Y
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 524
+        width: 168
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.299988, y: 68.20001}
+        - {x: -65.29999, y: 57.200012}
+        - {x: -67.29999, y: 50.200012}
+        - {x: -67.29999, y: -45.799988}
+        - {x: -51.299988, y: -67.79999}
+        - {x: 67.70001, y: -67.79999}
+        - {x: 67.70001, y: 68.20001}
+    - name: Letter_Bubbles_Z
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 524
+        width: 169
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -49.399963, y: 68.20001}
+        - {x: -67.39996, y: 58.200012}
+        - {x: -67.39996, y: -67.79999}
+        - {x: 53.600037, y: -67.79999}
+        - {x: 68.60004, y: -55.799988}
+        - {x: 68.60004, y: 68.20001}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
