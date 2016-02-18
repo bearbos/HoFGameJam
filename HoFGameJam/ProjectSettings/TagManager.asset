@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Letter
   - Wall
+  - Player
   layers:
   - Default
   - TransparentFX
