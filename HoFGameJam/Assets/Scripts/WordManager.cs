@@ -7,10 +7,13 @@ public class WordManager : MonoBehaviour {
     public string three_letter_word;
     public string four_letter_word;
     public string seven_letter_word;
+    [SerializeField]
+    public char[] all_letters;
     int[] used_numbers = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 };
 
     // Use this for initialization
     void Start () {
+        all_letters = new char[7];
         letter_spawners = GameObject.FindGameObjectsWithTag("Letter");
 
         bool result = GetComponent<DictionaryData>().Load();
@@ -41,6 +44,7 @@ public class WordManager : MonoBehaviour {
                 used_numbers[i] = number;
                 char letter = three_letter_word[i];
                 letter_spawners[number].GetComponent<LetterSpawn>().InstantiateLetter(letter);
+                all_letters[i] = letter;
             }
             for (int i = 0; i < 4; ++i)
             {
@@ -60,6 +64,7 @@ public class WordManager : MonoBehaviour {
                 used_numbers[i + 3] = number;
                 char letter = four_letter_word[i];
                 letter_spawners[number].GetComponent<LetterSpawn>().InstantiateLetter(letter);
+                all_letters[i + 3] = letter;
             }
         }
 	}

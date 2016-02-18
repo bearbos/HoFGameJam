@@ -85,6 +85,52 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &896960988
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 449770, guid: dafb4497a7b65b64286a93fae2a2d9bf, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 449770, guid: dafb4497a7b65b64286a93fae2a2d9bf, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 449770, guid: dafb4497a7b65b64286a93fae2a2d9bf, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449770, guid: dafb4497a7b65b64286a93fae2a2d9bf, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449770, guid: dafb4497a7b65b64286a93fae2a2d9bf, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449770, guid: dafb4497a7b65b64286a93fae2a2d9bf, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449770, guid: dafb4497a7b65b64286a93fae2a2d9bf, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 449770, guid: dafb4497a7b65b64286a93fae2a2d9bf, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11495758, guid: dafb4497a7b65b64286a93fae2a2d9bf, type: 2}
+      propertyPath: MainCamera
+      value: 
+      objectReference: {fileID: 1807433822}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dafb4497a7b65b64286a93fae2a2d9bf, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1807433822
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +143,7 @@ GameObject:
   - 92: {fileID: 1807433825}
   - 124: {fileID: 1807433824}
   - 81: {fileID: 1807433823}
+  - 114: {fileID: 1807433828}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -171,3 +218,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1807433828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1807433822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5e130de54a0b042b9f1fcc9e7624d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultySetting: 1
+  score: 0

@@ -34,8 +34,7 @@ public class Enemy : MonoBehaviour {
             movementSpeed = 0;
         }
 
-        enemy.transform.position = (point1.transform.position + point2.transform.position) * 0.5f;
-
+        
 
 
     }
