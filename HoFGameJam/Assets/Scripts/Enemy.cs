@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour {
             movementSpeed = 0;
         }
 
-
+        
 
 
     }

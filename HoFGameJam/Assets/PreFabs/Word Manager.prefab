@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11466806}
   m_Layer: 0
   m_Name: Word Manager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

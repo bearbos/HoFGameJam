@@ -4,6 +4,8 @@ using System.Collections;
 public class Persistent : MonoBehaviour
 {
     private static Persistent something = null;
+    int current_char = 0;
+    public string current_word; 
 
 
 
@@ -38,11 +40,10 @@ public class Persistent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-
-
-
-
+        if (current_word == "")
+        {
+            current_word = current_word = GameObject.FindGameObjectWithTag("GameController").GetComponent<WordManager>().three_letter_word;
+        }
     }
 
     public int GetDifficulty()
@@ -76,5 +77,28 @@ public class Persistent : MonoBehaviour
         score = tempScore;
 
         return true;
+    }
+
+    public bool CheckBubble(char[] bubble_char)
+    {
+        if (bubble_char[0] == current_word[current_char])
+        {
+            UpdateScore();
+            current_char++;
+            if (current_char == current_word.Length && current_word.Length < 7)
+            {
+                if (current_word.Length == 3) current_word = GameObject.FindGameObjectWithTag("GameController").GetComponent<WordManager>().four_letter_word;
+                else current_word = GameObject.FindGameObjectWithTag("GameController").GetComponent<WordManager>().seven_letter_word;
+
+                current_char = 0;
+            }
+            else if (current_char == current_word.Length)
+            {
+                //Level End.
+            }
+            return true;
+        }
+
+        return false;
     }
 }
