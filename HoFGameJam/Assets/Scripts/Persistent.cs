@@ -95,22 +95,25 @@ public class Persistent : MonoBehaviour
 
     public bool CheckBubble(char[] bubble_char)
     {
-        if (bubble_char[0] == current_word[current_char])
+        if (current_word.Length >= 3)
         {
-            UpdateScore();
-            current_char++;
-            if (current_char == current_word.Length && current_word.Length < 7)
+            if (bubble_char[0] == current_word[current_char])
             {
-                if (current_word.Length == 3) current_word = GameObject.FindGameObjectWithTag("GameController").GetComponent<WordManager>().four_letter_word;
-                else current_word = GameObject.FindGameObjectWithTag("GameController").GetComponent<WordManager>().seven_letter_word;
+                UpdateScore();
+                current_char++;
+                if (current_char == current_word.Length && current_word.Length < 7)
+                {
+                    if (current_word.Length == 3) current_word = GameObject.FindGameObjectWithTag("GameController").GetComponent<WordManager>().four_letter_word;
+                    else current_word = GameObject.FindGameObjectWithTag("GameController").GetComponent<WordManager>().seven_letter_word;
 
-                current_char = 0;
+                    current_char = 0;
+                }
+                else if (current_char == current_word.Length)
+                {
+                    //Level End.
+                }
+                return true;
             }
-            else if (current_char == current_word.Length)
-            {
-                //Level End.
-            }
-            return true;
         }
 
         return false;

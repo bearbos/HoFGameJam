@@ -108,47 +108,47 @@ public class Player : MonoBehaviour
         }
 
 
-        //#if UNITY_EDITOR
-        //        if (Input.anyKey != movementPressed)
-        //        {
-        //            movementPressed = !(movementPressed);
-        //            TimerSet = false;
-        //        }
+        #if UNITY_EDITOR
+                if (Input.anyKey != movementPressed)
+                {
+                    movementPressed = !(movementPressed);
+                    TimerSet = false;
+                }
 
 
-        //        if (movementTimer <= 0 && movementPressed)
-        //        {
-        //            movex = Input.GetAxis("Horizontal");
-        //            movey = Input.GetAxis("Vertical");
-        //            if (movex > 0)
-        //            {
-        //                transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-        //            }
-        //            if (movex < 0)
-        //            {
-        //                transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-        //            }
-        //            if (movey > 0)
-        //            {
-        //                transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        //            }
-        //            if (movey < 0)
-        //            {
-        //                transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-        //            }
-        //            if (TimerSet)
-        //            {
-        //                movementTimer = .25f;
-        //            }
-        //            else
-        //            {
-        //                movementTimer = .75f;
-        //                TimerSet = true;
-        //            }
-        //        }
+                if (movementTimer <= 0 && movementPressed)
+                {
+                    movex = Input.GetAxis("Horizontal");
+                    movey = Input.GetAxis("Vertical");
+                    if (movex > 0)
+                    {
+                        transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                    }
+                    if (movex < 0)
+                    {
+                        transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                    }
+                    if (movey > 0)
+                    {
+                        transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                    }
+                    if (movey < 0)
+                    {
+                        transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                    }
+                    if (TimerSet)
+                    {
+                        movementTimer = .25f;
+                    }
+                    else
+                    {
+                        movementTimer = .75f;
+                        TimerSet = true;
+                    }
+                }
 
 
-        //#endif
+        #endif
 
         //#if MOVEMENTOPTION
         //        // TOUCH

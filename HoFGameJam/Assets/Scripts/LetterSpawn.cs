@@ -3,12 +3,13 @@ using System.Collections;
 
 public class LetterSpawn : MonoBehaviour {
 
+    [SerializeField]
     char[] curr_letter = new char[2];
     public Sprite[] alphabet;
+    bool enabled = false;
 
 	// Use this for initialization
 	void Start () {
-        curr_letter[0] = '0';
 	}
 	
 	// Update is called once per frame
@@ -22,14 +23,15 @@ public class LetterSpawn : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().sprite = alphabet[letter - 'A'];
             curr_letter[0] = letter;
+            enabled = true;
         }
     }
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.CompareTag("Player") && GameObject.FindGameObjectWithTag("Player").GetComponent<Persistent>().CheckBubble(curr_letter))
+        if (enabled == true && coll.CompareTag("Player") && GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Persistent>().CheckBubble(curr_letter))
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
