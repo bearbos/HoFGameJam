@@ -1,13 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Persistent : MonoBehaviour
 {
     private static Persistent something = null;
+    public static bool MOVEMENTOPTION = false;
+    public static int SHARK = 0;
+    public static int OCTOPUS = 1;
+    public static int ANGLER = 2;
+    public static int EASY = 0;
+    public static int MEDIUM = 1;
+    public static int HARD = 2;
 
 
 
-    [SerializeField]
+
+
+
+
+
+[SerializeField]
     enum Difficulty
     {
         EASY,
@@ -38,7 +51,7 @@ public class Persistent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
 
 
 
