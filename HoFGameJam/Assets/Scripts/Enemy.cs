@@ -77,6 +77,7 @@ public class Enemy : MonoBehaviour {
             timeRemaining -= Time.deltaTime;
             if (timeRemaining < 0 && timeRemaining > -3)
             {
+                GetComponent<Animator>().SetBool("Warning", false);
                 movementSpeed = 5;
                 step = movementSpeed * Time.deltaTime;               
 
