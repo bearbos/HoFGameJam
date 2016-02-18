@@ -10,32 +10,24 @@ public class Player : MonoBehaviour
     int MOVEMENTOPTION;
     [SerializeField]
     float oxygen = 10f;
-    [SerializeField]
     float totalOxygen = 10f;
-    [SerializeField]
     bool adjusted = true;
-    [SerializeField]
     float movementDistance = 1;
-    [SerializeField]
     float damageAmountFromShark = 0.0f;
-    [SerializeField]
     float damageAmountFromOctopus = 0.0f;
-    [SerializeField]
     float damageAmountFromTerrain = 0.0f;
-    [SerializeField]
     float fillPerSuccess = 1f;
-    [SerializeField]
-    float continuousO2Drain = 0.0f;
+    float continuousO2Drain = 0.015625f;
     float movex;
     float movey;
-    [SerializeField]
     float movementTimer = 0.0f;
-    [SerializeField]
     bool movementPressed = false;
     bool TimerSet = false;
     float tempInvulnTimer = 0f;
     float tempTime = 0;
     float tempTimeMover;
+
+        int tempO2 = 0;
 
     int moveDirection = -1;
     /*
@@ -60,6 +52,7 @@ public class Player : MonoBehaviour
         MOVEMENTOPTION = MainCamera.GetComponent<Persistent>().GetControls();
         Debug.Log(MOVEMENTOPTION);
         Debug.Log("Movement Type");
+        tempO2 = (int)oxygen;
 
     }
 
@@ -82,7 +75,7 @@ public class Player : MonoBehaviour
                         damageAmountFromOctopus = 1.0f;
                         damageAmountFromTerrain = 1.0f;
                         fillPerSuccess = .75f;
-                        continuousO2Drain = 0.125f;
+                        continuousO2Drain = 0.0625f;
                     }
                     break;
                 case 3:     // HARD
@@ -91,7 +84,7 @@ public class Player : MonoBehaviour
                         damageAmountFromOctopus = 2.0f;
                         damageAmountFromTerrain = 2.0f;
                         fillPerSuccess = .5f;
-                        continuousO2Drain = 0.25f;
+                        continuousO2Drain = 0.125f;
                     }
                     break;
                 default:
@@ -102,7 +95,14 @@ public class Player : MonoBehaviour
 
         }
 
+        oxygen -= continuousO2Drain * Time.deltaTime;
 
+        if ((int)oxygen < tempO2 )
+        {
+            tempO2 = (int)oxygen;
+            Debug.Log(oxygen);
+            Debug.Log("Oxygen");
+        }
 
         if (movementTimer > 0)
         {

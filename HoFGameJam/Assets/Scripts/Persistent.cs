@@ -25,7 +25,7 @@ public class Persistent : MonoBehaviour
         MEDIUM,
         HARD
     }
-    Difficulty difficultySetting = Difficulty.EASY;
+    Difficulty difficultySetting = Difficulty.HARD;
     [SerializeField]
     enum Control
     {
