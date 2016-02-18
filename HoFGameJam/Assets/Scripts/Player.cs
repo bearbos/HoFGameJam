@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         MainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-        difficultySetting = MainCamera.GetComponent<Persistent>().GetDifficulty();
+    
     }
 
     // Update is called once per frame
