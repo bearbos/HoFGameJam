@@ -200,6 +200,7 @@ GameObject:
   - 92: {fileID: 169211643}
   - 124: {fileID: 169211642}
   - 81: {fileID: 169211641}
+  - 114: {fileID: 169211646}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -274,6 +275,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1436816717}
   m_RootOrder: 0
+--- !u!114 &169211646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 169211640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5e130de54a0b042b9f1fcc9e7624d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_word: 
+  score: 0
 --- !u!1 &189506384
 GameObject:
   m_ObjectHideFlags: 0
@@ -3764,18 +3778,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a0c77fa518cf24995ecb539d63cb26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainCamera: {fileID: 0}
-  difficultySetting: 0
+  MainCamera: {fileID: 169211640}
   oxygen: 10
-  adjusted: 1
-  movementDistance: 1
-  damageAmountFromShark: 0
-  damageAmountFromOctopus: 0
-  damageAmountFromTerain: 0
-  fillPerSuccess: 1
-  continuousO2Drain: 0
-  movementTimer: 0
-  movementPressed: 0
 --- !u!4 &1436816717
 Transform:
   m_ObjectHideFlags: 0
