@@ -47,6 +47,11 @@ public class PauseScript : MonoBehaviour {
         Application.LoadLevel("MainMenu");
     }
 
+    public void PauseMenu()
+    {
+        isPaused = true;
+    }
+
     public void resume()
     {
         isPaused = false;
