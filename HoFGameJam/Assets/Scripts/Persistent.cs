@@ -28,7 +28,6 @@ public class Persistent : MonoBehaviour
         HARD
     }
     Difficulty difficultySetting = Difficulty.HARD;
-    [SerializeField]
     enum Control
     {
         TOUCH,
@@ -138,4 +137,15 @@ public class Persistent : MonoBehaviour
 
         return false;
     }
+
+    public void SetControls(int controlType)
+    {
+        controlSetting = (Control)controlType;
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
+    }
+
 }

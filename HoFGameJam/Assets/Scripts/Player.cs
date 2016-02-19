@@ -27,6 +27,10 @@ public class Player : MonoBehaviour
     float tempTime = 0;
     float tempTimeMover;
 
+    Vector3 targetPosition;
+    Vector3 startingPosition;
+    float speed = 1;
+
     int tempO2 = 0;
 
     int moveDirection = -1;
@@ -53,6 +57,8 @@ public class Player : MonoBehaviour
         Debug.Log(MOVEMENTOPTION);
         Debug.Log("Movement Type");
         tempO2 = (int)oxygen;
+        targetPosition = transform.position;
+        startingPosition = targetPosition;
 
     }
 
@@ -61,7 +67,7 @@ public class Player : MonoBehaviour
     {
         if (adjusted)
         {
-                        Debug.Log("test00");
+            Debug.Log("test00");
             Debug.Log(difficultySetting);
             switch (difficultySetting)
             {
@@ -111,6 +117,8 @@ public class Player : MonoBehaviour
             Debug.Log(difficultySetting);
         }
 
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+
         if (movementTimer > 0)
         {
             movementTimer -= Time.deltaTime;
@@ -122,47 +130,48 @@ public class Player : MonoBehaviour
 
 
         #region Editor
-        #if UNITY_EDITOR
-                if (Input.anyKey != movementPressed)
-                {
-                    movementPressed = !(movementPressed);
-                    TimerSet = false;
-                }
+#if UNITY_EDITOR
+        if (Input.anyKey != movementPressed)
+        {
+            movementPressed = !(movementPressed);
+            TimerSet = false;
+        }
 
 
-                if (movementTimer <= 0 && movementPressed)
-                {
-                    movex = Input.GetAxis("Horizontal");
-                    movey = Input.GetAxis("Vertical");
-                    if (movex > 0)
-                    {
-                        transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-                    }
-                    if (movex < 0)
-                    {
-                        transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-                    }
-                    if (movey > 0)
-                    {
-                        transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                    }
-                    if (movey < 0)
-                    {
-                        transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-                    }
-                    if (TimerSet)
-                    {
-                        movementTimer = .25f;
-                    }
-                    else
-                    {
-                        movementTimer = .75f;
-                        TimerSet = true;
-                    }
-                }
+        if (movementTimer <= 0 && movementPressed)
+        {
+            movex = Input.GetAxis("Horizontal");
+            movey = Input.GetAxis("Vertical");
+            startingPosition = transform.position;
+            if (movex > 0)
+            {
+                targetPosition = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+            }
+            if (movex < 0)
+            {
+                targetPosition = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+            }
+            if (movey > 0)
+            {
+                targetPosition = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+            }
+            if (movey < 0)
+            {
+                targetPosition = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            }
+            if (TimerSet)
+            {
+                movementTimer = .25f;
+            }
+            else
+            {
+                movementTimer = .75f;
+                TimerSet = true;
+            }
+        }
 
 
-        #endif 
+#endif
         #endregion
 
         if (MOVEMENTOPTION == 0)
@@ -188,25 +197,26 @@ public class Player : MonoBehaviour
 
                 if (movementTimer <= 0 && tempTimeMover <= Time.time)
                 {
+                    startingPosition = transform.position;
 
                     if (x > 1f && Mathf.Abs(x) > Mathf.Abs(y))
                     {
-                        transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                        targetPosition = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
                         moveDirection = 2;
                     }
                     if (x < -1f && Mathf.Abs(x) > Mathf.Abs(y))
                     {
-                        transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                        targetPosition = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
                         moveDirection = 6;
                     }
                     if (y > 1f && Mathf.Abs(y) > Mathf.Abs(x))
                     {
-                        transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                        targetPosition = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
                         moveDirection = 0;
                     }
                     if (y < -1f && Mathf.Abs(y) > Mathf.Abs(x))
                     {
-                        transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                        targetPosition = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
                         moveDirection = 4;
                     }
 
@@ -249,25 +259,26 @@ public class Player : MonoBehaviour
 
             if (movementTimer <= 0 && tempTimeMover <= Time.time)
             {
+                startingPosition = transform.position;
 
                 if (x > .2f)
                 {
-                    transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                    targetPosition = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
                     moveDirection = 2;
                 }
                 if (x < -.2f)
                 {
-                    transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                    targetPosition = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
                     moveDirection = 6;
                 }
                 if (y > .2f)
                 {
-                    transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                    targetPosition = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
                     moveDirection = 0;
                 }
                 if (y < -.2f)
                 {
-                    transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                    targetPosition = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
                     moveDirection = 4;
                 }
 
@@ -300,10 +311,10 @@ public class Player : MonoBehaviour
 
         if (coll.gameObject.tag == "Wall")
         {
-            if (moveDirection == 2) transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-            if (moveDirection == 6) transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-            if (moveDirection == 0) transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-            if (moveDirection == 4) transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            if (moveDirection == 2) targetPosition = startingPosition;
+            if (moveDirection == 6) targetPosition = startingPosition;
+            if (moveDirection == 0) targetPosition = startingPosition;
+            if (moveDirection == 4) targetPosition = startingPosition;
         }
     }
 
@@ -321,6 +332,15 @@ public class Player : MonoBehaviour
         oxygen -= 1;
         tempInvulnTimer = damageAmountFromShark;
 
+    }
+
+    public void AddOxygen()
+    {
+        oxygen += 1;
+        if (oxygen > totalOxygen)
+        {
+            oxygen = totalOxygen;
+        }
     }
 
 }
