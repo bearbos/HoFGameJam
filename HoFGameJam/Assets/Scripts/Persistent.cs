@@ -136,4 +136,10 @@ public class Persistent : MonoBehaviour
 
         return false;
     }
+
+    public void ResetScore()
+    {
+        score = 0;
+    }
+
 }
