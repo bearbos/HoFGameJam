@@ -10,7 +10,8 @@ public class WordManager : MonoBehaviour {
     //public string seven_letter_word;
     [SerializeField]
     public char[] all_letters;
-    int[] used_numbers = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,-1, -1, -1, -1, -1 };
+    int[] used_numbers = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 
     // Use this for initialization
     void Start () {
@@ -19,7 +20,7 @@ public class WordManager : MonoBehaviour {
 
         three_letter_words = new string[num_words];
 
-        all_letters = new char[7];
+        all_letters = new char[num_words * 3];
         letter_spawners = GameObject.FindGameObjectsWithTag("Letter");
 
         bool result = GetComponent<DictionaryData>().Load();
@@ -34,14 +35,14 @@ public class WordManager : MonoBehaviour {
             //    [Random.Range(0, GetComponent<DictionaryData>().four_letter_words.Length)];
             //seven_letter_word = GetComponent<DictionaryData>().seven_letter_words
             //    [Random.Range(0, GetComponent<DictionaryData>().seven_letter_words.Length)];
-
-            for (int i = 0; i < num_words; ++i)
+            int index = 0;
+            for (int i = 1; i <= num_words; ++i)
             {
                 for (int j = 0; j < 3; ++j)
                 {
-                    int number = Random.Range(0, letter_spawners.Length);
+                    int number = index;//Random.Range(0, letter_spawners.Length);
                     int num_checks = 0;
-                    while (number == used_numbers[i * j] || number == used_numbers[i * j] || number == used_numbers[i * j])
+                    while (number == used_numbers[number] || number == used_numbers[number] || number == used_numbers[number])
                     {
                         num_checks++;
                         number++;
@@ -52,10 +53,11 @@ public class WordManager : MonoBehaviour {
                         if (num_checks > letter_spawners.Length)
                             break;
                     }
-                    used_numbers[i] = number;
-                    char letter = three_letter_words[i][j];
+                    used_numbers[number] = number;
+                    char letter = three_letter_words[i - 1][j];
                     letter_spawners[number].GetComponent<LetterSpawn>().InstantiateLetter(letter);
-                    all_letters[i] = letter;
+                    all_letters[i - 1] = letter;
+                    index++;
                 }
             }
             //for (int i = 0; i < 4; ++i)

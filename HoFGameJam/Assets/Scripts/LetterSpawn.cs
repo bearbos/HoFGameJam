@@ -19,18 +19,17 @@ public class LetterSpawn : MonoBehaviour {
 
     public void InstantiateLetter(char letter)
     {
-        if (curr_letter[0] == '0' || curr_letter[0] == '\0')
-        {
             GetComponent<SpriteRenderer>().sprite = alphabet[letter - 'A'];
             curr_letter[0] = letter;
             enabled = true;
-        }
     }
 
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (enabled == true && coll.CompareTag("Player") && GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Persistent>().CheckBubble(curr_letter))
         {
+            GameObject.FindGameObjectWithTag("Canvas").GetComponent<CanvaseHUDScript>().ChangeColor(curr_letter);
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().AddOxygen();
             Destroy(gameObject);
         }
     }
