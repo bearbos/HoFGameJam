@@ -57,6 +57,8 @@ public class Player : MonoBehaviour
         Debug.Log(MOVEMENTOPTION);
         Debug.Log("Movement Type");
         tempO2 = (int)oxygen;
+        targetPosition = transform.position;
+        startingPosition = targetPosition;
 
     }
 
