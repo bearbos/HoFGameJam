@@ -18,6 +18,7 @@ public class PauseScript : MonoBehaviour {
         if (isPaused)
         {
             pauseMenuCanvas.SetActive(true);
+
             Time.timeScale = 0f;
         }
         else
@@ -49,6 +50,7 @@ public class PauseScript : MonoBehaviour {
 
     public void PauseMenu()
     {
+
         isPaused = true;
     }
 
