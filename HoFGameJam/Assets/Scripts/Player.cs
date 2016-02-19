@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     float tempTime = 0;
     float tempTimeMover;
 
-        int tempO2 = 0;
+    int tempO2 = 0;
 
     int moveDirection = -1;
     /*
@@ -59,13 +59,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (adjusted)
         {
+                        Debug.Log("test00");
+            Debug.Log(difficultySetting);
             switch (difficultySetting)
             {
                 case 0:     // EASY
                     {
+                        Debug.Log("test0");
 
                     }
                     break;
@@ -76,18 +78,21 @@ public class Player : MonoBehaviour
                         damageAmountFromTerrain = 1.0f;
                         fillPerSuccess = .75f;
                         continuousO2Drain = 0.0625f;
+                        Debug.Log("test1");
                     }
                     break;
-                case 3:     // HARD
+                case 2:     // HARD
                     {
                         damageAmountFromShark = 2.0f;
                         damageAmountFromOctopus = 2.0f;
                         damageAmountFromTerrain = 2.0f;
                         fillPerSuccess = .5f;
                         continuousO2Drain = 0.125f;
+                        Debug.Log("test2");
                     }
                     break;
                 default:
+                    Debug.Log("test3");
                     break;
             }
 
@@ -97,11 +102,13 @@ public class Player : MonoBehaviour
 
         oxygen -= continuousO2Drain * Time.deltaTime;
 
-        if ((int)oxygen < tempO2 )
+        if ((int)oxygen < tempO2)
         {
             tempO2 = (int)oxygen;
             Debug.Log(oxygen);
             Debug.Log("Oxygen");
+            Debug.Log(continuousO2Drain);
+            Debug.Log(difficultySetting);
         }
 
         if (movementTimer > 0)
@@ -290,7 +297,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-       
+
         if (coll.gameObject.tag == "Wall")
         {
             if (moveDirection == 2) transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
@@ -300,20 +307,20 @@ public class Player : MonoBehaviour
         }
     }
 
-    float GetOxygen()
+    public float GetOxygen()
     {
         return oxygen;
     }
-    float GetTotalOxygen()
+    public float GetTotalOxygen()
     {
         return totalOxygen;
     }
 
     public void TakeDamage()
     {
-      oxygen -= 1;
-            tempInvulnTimer = damageAmountFromShark;
-       
+        oxygen -= 1;
+        tempInvulnTimer = damageAmountFromShark;
+
     }
 
 }
