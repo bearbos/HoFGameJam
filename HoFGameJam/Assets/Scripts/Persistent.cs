@@ -140,4 +140,10 @@ public class Persistent : MonoBehaviour
     {
         controlSetting = (Control)controlType;
     }
+
+    public void ResetScore()
+    {
+        score = 0;
+    }
+
 }
