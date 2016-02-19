@@ -5,7 +5,7 @@ using System.Collections;
 public class Persistent : MonoBehaviour
 {
     private static Persistent something = null;
-    int current_char = 0;
+    public int current_char = 0;
     int search_word = 0;
     int number_of_words = 0;
     public string current_word; 
@@ -115,8 +115,9 @@ public class Persistent : MonoBehaviour
             if (bubble_char[0] == current_word[current_char])
             {
                 UpdateScore();
+
                 current_char++;
-                if (current_char == current_word.Length && search_word < number_of_words)
+                if (current_char == current_word.Length && search_word < number_of_words - 1)
                 {
                     //if (current_word.Length == 3) current_word = GameObject.FindGameObjectWithTag("GameController").GetComponent<WordManager>().four_letter_word;
                     ///else 
@@ -125,10 +126,11 @@ public class Persistent : MonoBehaviour
 
                     current_char = 0;
                 }
-                else if (current_char == current_word.Length)
-                {
+                else if (current_char == current_word.Length && search_word == number_of_words - 1)              {
                     //Level End.
+                    Application.LoadLevel(1);
                 }
+
                 return true;
             }
         }

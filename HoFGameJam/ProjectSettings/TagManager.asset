@@ -8,7 +8,7 @@ TagManager:
   - Wall
   - Player
   - Enemy
-  - Pause
+  - Canvas
   layers:
   - Default
   - TransparentFX

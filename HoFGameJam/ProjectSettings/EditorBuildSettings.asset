@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Scenes/LvlOneEasy.unity
   - enabled: 1
     path: Assets/Scenes/BlaineTestScene.unity
+  - enabled: 1
+    path: Assets/Scenes/Credits 1.unity
