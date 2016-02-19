@@ -47,7 +47,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6151602
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -76,11 +76,12 @@ MonoBehaviour:
   MainCamera: {fileID: 0}
   difficultySetting: 0
   oxygen: 10
+  totalOxygen: 10
   adjusted: 1
   movementDistance: 1
   damageAmountFromShark: 0
   damageAmountFromOctopus: 0
-  damageAmountFromTerain: 0
+  damageAmountFromTerrain: 0
   fillPerSuccess: 1
   continuousO2Drain: 0
   movementTimer: 0
@@ -121,7 +122,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 149662}

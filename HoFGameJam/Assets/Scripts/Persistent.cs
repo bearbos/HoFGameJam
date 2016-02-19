@@ -31,6 +31,12 @@ public class Persistent : MonoBehaviour
     }
     [SerializeField]
     Difficulty difficultySetting = Difficulty.MEDIUM;
+    enum Control
+    {
+        TOUCH,
+        TILT
+    }
+    Control controlSetting = Control.TILT;
     [SerializeField]
     int score = 0;
 
@@ -117,5 +123,10 @@ public class Persistent : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void SetControls(int controlType)
+    {
+        controlSetting = (Control)controlType;
     }
 }
